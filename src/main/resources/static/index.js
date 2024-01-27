@@ -1,0 +1,7 @@
+function kjopBillett() {
+
+}
+
+function slettAlle() {
+
+}

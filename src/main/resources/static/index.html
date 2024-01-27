@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bestilling av kinobilletter</title>
+    <script src="index.js"></script>
+</head>
+<body>
+    <h1>Bestilling av kinobilletter</h1>
+    <label for="velgFilm">Velg film: </label>
+    <select id="velgFilm">
+        <option value="velgFilmHer">Velg film her</option>
+        <option value="inception">Inception</option>
+        <option value="interstellar">Interstellar</option>
+    </select> <br/> <br/>
+
+
+    <label for="antall">Antall</label>
+    <input id="antall" type="text"> <br/> <br/>
+
+    <!-- TODO: gjør så alle inputs er under hverandre -->
+    <label for="innFornavn">Fornavn</label>
+    <input id="innFornavn" type="text"> <br/>
+    <label for="innEtternavn">Etternavn</label>
+    <input id="innEtternavn" type="text"> <br/>
+    <label for="innTelefonnr">Telefonnr</label>
+    <input id="innTelefonnr" type="text"> <br/>
+    <label for="innEpost">Epost</label>
+    <input id="innEpost" type="text"> <br/>
+
+    <button onclick="kjopBillett()">Kjøp billett</button> <br/> <br/>
+
+    <h2>Alle billetter</h2> <br/>
+    <div class="resultat"></div> <br/>
+    <button onclick="slettAlle()">Slett alle billettene</button>
+</body>
+</html>
