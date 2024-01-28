@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Bestilling av kinobilletter</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="index.js"></script>
 </head>
 <body>
@@ -15,23 +16,31 @@
     </select> <br/> <br/>
 
 
-    <label for="antall">Antall</label>
-    <input id="antall" type="text"> <br/> <br/>
+    <label for="innAntall">Antall</label>
+    <input id="innAntall" type="text">
+    <label id="feilmeldingAntall" for="innAntall"></label><br/><br/>
 
     <!-- TODO: gjør så alle inputs er under hverandre -->
     <label for="innFornavn">Fornavn</label>
-    <input id="innFornavn" type="text"> <br/>
+    <input id="innFornavn" type="text">
+    <label id="feilmeldingfornavn" for="innFornavn"></label><br/>
+
     <label for="innEtternavn">Etternavn</label>
-    <input id="innEtternavn" type="text"> <br/>
+    <input id="innEtternavn" type="text">
+    <label id="feilmeldingetternavn" for="innEtternavn"></label><br/>
+
     <label for="innTelefonnr">Telefonnr</label>
-    <input id="innTelefonnr" type="text"> <br/>
+    <input id="innTelefonnr" type="text">
+    <label id="feilmeldingtelefonnr" for="innTelefonnr"></label><br/>
+
     <label for="innEpost">Epost</label>
-    <input id="innEpost" type="text"> <br/>
+    <input id="innEpost" type="text">
+    <label id="feilmeldingEpost" for="innEpost"></label><br/>
 
     <button onclick="kjopBillett()">Kjøp billett</button> <br/> <br/>
 
     <h2>Alle billetter</h2> <br/>
-    <div class="resultat"></div> <br/>
+    <div id="resultat"></div> <br/>
     <button onclick="slettAlle()">Slett alle billettene</button>
 </body>
 </html>
