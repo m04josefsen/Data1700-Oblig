@@ -7,7 +7,7 @@ function kjopBillett() {
         antall : Number($("#innAntall").val()),
         fornavn : $("#innFornavn").val(),
         etternavn : $("#innEtternavn").val(),
-        telefonnr : $("#innTelefonnr").val(),
+        telefonnr : Number($("#innTelefonnr").val()),
         epost : $("#innEpost").val()
     };
 
@@ -33,15 +33,34 @@ function kjopBillett() {
         document.getElementById("feilmeldingEpost").innerHTML = ut;
     }
 
+    //Input validering for telefonnr;
+    if(!isNaN(billett.telefonnr) && billett.telefonnr >= 10000000) {
+        teller++;
+    }
+    else {
+        let ut = "Må skrive inn et gyldig telefonnr";
+        ut = ut.fontcolor("RED");
+        document.getElementById("feilmeldingTelefonnr").innerHTML = ut;
+    }
+
     //Input validering for resten;
     stringValidering(billett.fornavn, "fornavn");
     stringValidering(billett.etternavn, "etternavn");
-    stringValidering(billett.telefonnr, "telefonnr");
 
     if(teller === 5) {
         billetter.push(billett);
         visResultat();
+
+        //Tømmer input feltene
+        document.getElementById("innAntall").value = "";
+        document.getElementById("innFornavn").value = "";
+        document.getElementById("innEtternavn").value = "";
+        document.getElementById("innTelefonnr").value = "";
+        document.getElementById("innEpost").value = "";
     }
+
+
+
 }
 
 function visResultat() {
@@ -62,7 +81,6 @@ function visResultat() {
 
 function stringValidering(string, type) {
     if(string === "") {
-        //TODO: gjør rød tekst
         let ut = "Må skrive noe inn i " + type;
         ut = ut.fontcolor("RED");
         document.getElementById("feilmelding" + type).innerHTML = ut;
@@ -70,7 +88,6 @@ function stringValidering(string, type) {
     else {
         teller++;
     }
-
 }
 
 function slettAlle() {

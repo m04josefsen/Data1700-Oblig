@@ -5,6 +5,19 @@
     <title>Bestilling av kinobilletter</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="index.js"></script>
+    <style>
+        #innAntall {
+            width: 30px;
+        }
+
+        #fornavn {
+            padding-right: 9px;
+        }
+
+        #epost {
+            padding-right: 26px;
+        }
+    </style>
 </head>
 <body>
     <h1>Bestilling av kinobilletter</h1>
@@ -15,13 +28,11 @@
         <option value="interstellar">Interstellar</option>
     </select> <br/> <br/>
 
-
     <label for="innAntall">Antall</label>
     <input id="innAntall" type="text">
     <label id="feilmeldingAntall" for="innAntall"></label><br/><br/>
 
-    <!-- TODO: gjør så alle inputs er under hverandre -->
-    <label for="innFornavn">Fornavn</label>
+    <label for="innFornavn" id="fornavn">Fornavn</label>
     <input id="innFornavn" type="text">
     <label id="feilmeldingfornavn" for="innFornavn"></label><br/>
 
@@ -31,11 +42,11 @@
 
     <label for="innTelefonnr">Telefonnr</label>
     <input id="innTelefonnr" type="text">
-    <label id="feilmeldingtelefonnr" for="innTelefonnr"></label><br/>
+    <label id="feilmeldingTelefonnr" for="innTelefonnr"></label><br/>
 
-    <label for="innEpost">Epost</label>
+    <label for="innEpost" id="epost">Epost</label>
     <input id="innEpost" type="text">
-    <label id="feilmeldingEpost" for="innEpost"></label><br/>
+    <label id="feilmeldingEpost" for="innEpost"></label><br/> <br/>
 
     <button onclick="kjopBillett()">Kjøp billett</button> <br/> <br/>
 
