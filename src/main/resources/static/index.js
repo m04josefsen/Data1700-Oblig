@@ -13,7 +13,7 @@ function kjopBillett() {
 
     teller = 0;
 
-    //Input validering for antall
+    //Input validering for antall;
     if(isNaN(billett.antall) || billett.antall === 0) {
         let ut = "Du må skrive noe over 0 i antall";
         ut = ut.fontcolor("RED");
