@@ -1,10 +1,10 @@
-Oblig 2
+Oblig 1
 =======
 OsloMet brukernavn: majos6959
 
 GitHub brukernavn: m04josefsen
 
-Github repo URL: https://github.com/data1700-v23/oblig-1-m04josefsen
+Github repo URL: https://github.com/m04josefsen/Data1700-Oblig1.git
 
 Fullt navn: Marco Josefsen
 

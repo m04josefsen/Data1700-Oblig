@@ -11,6 +11,7 @@ function kjopBillett() {
         epost : $("#innEpost").val()
     };
 
+    //Teller for å sjekke at input feltene er riktig
     teller = 0;
 
     //Input validering for antall;
@@ -34,7 +35,7 @@ function kjopBillett() {
     }
 
     //Input validering for telefonnr;
-    if(!isNaN(billett.telefonnr) && billett.telefonnr >= 10000000) {
+    if(!isNaN(billett.telefonnr) && billett.telefonnr >= 10000000 && billett.telefonnr <= 99999999) {
         teller++;
     }
     else {
