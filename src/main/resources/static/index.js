@@ -24,16 +24,6 @@ function kjopBillett() {
         teller++;
     }
 
-    //Input validering for epost;
-    if(billett.epost.includes("@")) {
-        teller++;
-    }
-    else {
-        let ut = "Må skrive inn en gyldig epost";
-        ut = ut.fontcolor("RED");
-        document.getElementById("feilmeldingEpost").innerHTML = ut;
-    }
-
     //Input validering for telefonnr;
     if(!isNaN(billett.telefonnr) && billett.telefonnr >= 10000000 && billett.telefonnr <= 99999999) {
         teller++;
@@ -43,6 +33,9 @@ function kjopBillett() {
         ut = ut.fontcolor("RED");
         document.getElementById("feilmeldingTelefonnr").innerHTML = ut;
     }
+
+    //Input validering for mail
+    epostValidering(billett.epost);
 
     //Input validering for resten;
     stringValidering(billett.fornavn, "fornavn");
@@ -58,6 +51,12 @@ function kjopBillett() {
         document.getElementById("innEtternavn").value = "";
         document.getElementById("innTelefonnr").value = "";
         document.getElementById("innEpost").value = "";
+
+        document.getElementById("feilmeldingAntall").innerHTML = "";
+        document.getElementById("feilmeldingfornavn").innerHTML = "";
+        document.getElementById("feilmeldingetternavn").innerHTML = "";
+        document.getElementById("feilmeldingTelefonnr").innerHTML = "";
+        document.getElementById("feilmeldingEpost").innerHTML = "";
     }
 
 
@@ -87,6 +86,18 @@ function stringValidering(string, type) {
         document.getElementById("feilmelding" + type).innerHTML = ut;
     }
     else {
+        teller++;
+    }
+}
+
+function epostValidering(epost) {
+    let epostPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!epostPattern.test(epost)) {
+        let ut = "Må skrive inn en gyldig e-postadresse";
+        ut = ut.fontcolor("RED");
+        document.getElementById("feilmeldingEpost").innerHTML = ut;
+    } else {
         teller++;
     }
 }
