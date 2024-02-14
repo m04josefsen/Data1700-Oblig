@@ -58,9 +58,6 @@ function kjopBillett() {
         document.getElementById("feilmeldingTelefonnr").innerHTML = "";
         document.getElementById("feilmeldingEpost").innerHTML = "";
     }
-
-
-
 }
 
 function visResultat() {
