@@ -25,14 +25,7 @@ function kjopBillett() {
     }
 
     //Input validering for telefonnr;
-    if(!isNaN(billett.telefonnr) && billett.telefonnr >= 10000000 && billett.telefonnr <= 99999999) {
-        teller++;
-    }
-    else {
-        let ut = "Må skrive inn et gyldig telefonnr";
-        ut = ut.fontcolor("RED");
-        document.getElementById("feilmeldingTelefonnr").innerHTML = ut;
-    }
+    telefonnrValidering(billett.telefonnr);
 
     //Input validering for mail
     epostValidering(billett.epost);
@@ -81,6 +74,19 @@ function stringValidering(string, type) {
         let ut = "Må skrive noe inn i " + type;
         ut = ut.fontcolor("RED");
         document.getElementById("feilmelding" + type).innerHTML = ut;
+    }
+    else {
+        teller++;
+    }
+}
+
+function telefonnrValidering(telefonnr) {
+    let telefonnrPattern = /^(\+47)?\d{8}$/;
+
+    if(!telefonnrPattern.test(telefonnr)) {
+        let ut = "Må skrive inn et gyldig telefonnr";
+        ut = ut.fontcolor("RED");
+        document.getElementById("feilmeldingTelefonnr").innerHTML = ut;
     }
     else {
         teller++;
