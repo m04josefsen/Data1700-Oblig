@@ -70,6 +70,17 @@ function visResultat() {
 }
 
 function stringValidering(string, type) {
+    let navnPattern = /^[a-zA-ZæøåÆØÅ]+$/;
+
+    if(!navnPattern.test(string)) {
+        let ut = "Må skrive inn et gyldig " + type;
+        ut = ut.fontcolor("RED");
+        document.getElementById("feilmelding" + type).innerHTML = ut;
+    }
+    else {
+        teller++;
+    }
+    /*
     if(string === "") {
         let ut = "Må skrive noe inn i " + type;
         ut = ut.fontcolor("RED");
@@ -78,6 +89,7 @@ function stringValidering(string, type) {
     else {
         teller++;
     }
+     */
 }
 
 function telefonnrValidering(telefonnr) {
