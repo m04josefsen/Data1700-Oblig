@@ -80,16 +80,6 @@ function stringValidering(string, type) {
     else {
         teller++;
     }
-    /*
-    if(string === "") {
-        let ut = "Må skrive noe inn i " + type;
-        ut = ut.fontcolor("RED");
-        document.getElementById("feilmelding" + type).innerHTML = ut;
-    }
-    else {
-        teller++;
-    }
-     */
 }
 
 function telefonnrValidering(telefonnr) {
