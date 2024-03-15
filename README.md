@@ -1,5 +1,3 @@
-Oblig 1
-=======
 OsloMet brukernavn: majos6959
 
 GitHub brukernavn: m04josefsen

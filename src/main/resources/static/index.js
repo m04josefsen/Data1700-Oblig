@@ -1,4 +1,3 @@
-let billetter = [];
 let teller = 0;
 
 function kjopBillett() {
@@ -35,8 +34,11 @@ function kjopBillett() {
     stringValidering(billett.etternavn, "etternavn");
 
     if(teller === 5) {
-        billetter.push(billett);
-        visResultat();
+        $.post("lagre", billett, function() {
+            $.get("hentAlle", function(billett) {
+                visResultat(billett)
+            });
+        });
 
         //Tømmer input feltene
         document.getElementById("innAntall").value = "";
@@ -53,12 +55,12 @@ function kjopBillett() {
     }
 }
 
-function visResultat() {
+function visResultat(billett) {
     let ut = "<table><tr>" +
         "<th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnr</th><th>Epost</th>" +
         "</tr>";
 
-    for(let b of billetter) {
+    for(let b of billett) {
                 ut += "<tr>";
                 ut += "<td>" + b.film + "</td><td>" + b.antall + "</td><td>" + b.fornavn +
                       "</td><td>" + b.etternavn + "</td><td>" + b.telefonnr +  "</td><td>" + b.epost + "</td>";
@@ -108,6 +110,10 @@ function epostValidering(epost) {
 }
 
 function slettAlle() {
-    billetter.length = 0;
-    visResultat();
+    $.get("slettAlle", function() {
+        $.get("hentAlle", function(billett) {
+            visResultat(billett)
+        });
+    });
+
 }
