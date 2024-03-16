@@ -14,7 +14,7 @@ function kjopBillett() {
     teller = 0;
 
     //Input validering for antall;
-    if(isNaN(billett.antall) || billett.antall === 0) {
+    if(isNaN(billett.antall) || billett.antall <= 0) {
         let ut = "Du må skrive noe over 0 i antall";
         ut = ut.fontcolor("RED");
         document.getElementById("feilmeldingAntall").innerHTML = ut;
@@ -56,7 +56,7 @@ function kjopBillett() {
 }
 
 function visResultat(billett) {
-    let ut = "<table><tr>" +
+    let ut = "<table class='table table-striped table-bordered'><tr>" +
         "<th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnr</th><th>Epost</th>" +
         "</tr>";
 
